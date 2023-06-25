@@ -11,7 +11,7 @@ import jwt from "jsonwebtoken";
             token = token.slice(7, token.length).trimLeft();
         }
 
-        const verified = jwt.verified(token, process.env.JWT_SECRET_KEY);
+        const verified = jwt.verify(token, process.env.JWT_SECRET_KEY);
 
         req.user = verified;
 
